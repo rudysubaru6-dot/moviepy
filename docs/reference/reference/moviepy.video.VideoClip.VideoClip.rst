@@ -1,12 +1,12 @@
-.. custom class to enable complete documentation of every function
-   see https://stackoverflow.com/a/62613202
 
-moviepy.video.VideoClip.VideoClip
-=================================
 
-.. currentmodule:: moviepy.video.VideoClip
+   from moviepy.editor import VideoFileClip
 
-.. autoclass:: VideoClip
-   :members:
+# Load your video
+clip = VideoFileClip("zerotwo.mp4")
 
-   
+# Reverse it
+reversed_clip = clip.fx(lambda c: c.fx(vfx.time_mirror))
+
+# Save output
+reversed_clip.write_videofile("zerotwo_reversed.mp4", codec="libx264")
